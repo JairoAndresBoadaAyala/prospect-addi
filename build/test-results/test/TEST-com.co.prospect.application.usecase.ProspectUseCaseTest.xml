@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.co.prospect.application.usecase.ProspectUseCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-14T22:56:32" hostname="jairo-HP-ProBook-450-G7" time="0.332">
+  <properties/>
+  <testcase name="validateSuccessfulProspect()" classname="com.co.prospect.application.usecase.ProspectUseCaseTest" time="0.332"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

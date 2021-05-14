@@ -1,0 +1,12 @@
+com/co/prospect/Application.java
+ com.co.prospect.Application
+com/co/prospect/domain/Person.java
+ com.co.prospect.domain.Person
+com/co/prospect/application/port/out/ProspectRatingClient.java
+ com.co.prospect.application.port.out.ProspectRatingClient
+com/co/prospect/application/port/out/PersonRepository.java
+ com.co.prospect.application.port.out.PersonRepository
+com/co/prospect/application/port/out/JudicialClient.java
+ com.co.prospect.application.port.out.JudicialClient
+com/co/prospect/application/port/out/PersonClient.java
+ com.co.prospect.application.port.out.PersonClient
