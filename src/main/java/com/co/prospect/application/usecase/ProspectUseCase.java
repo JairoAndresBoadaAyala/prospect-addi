@@ -26,9 +26,10 @@ public class ProspectUseCase {
         var personExternal = personClient.getPersonByIdentificationNumber(identificationNumber);
         var personDB = personRepository.getPersonByIdentificationNumber(identificationNumber);
         var judicialRecord =  judicialClient.haveJudicialRecord(identificationNumber);
-        prospectRatingClient.getProspectQualification(personDB , true , judicialRecord );// tengo que crear un nuevo objeto para la respuesta para sacar la personar y la respuesta del puntaje
+
+        prospectRatingClient.getProspectQualification(personDB.blockFirst() , true , judicialRecord .blockFirst());// tengo que crear un nuevo objeto para la respuesta para sacar la personar y la respuesta del puntaje
 
 
-        return personExternal;
+        return personExternal.blockFirst();
     }
 }

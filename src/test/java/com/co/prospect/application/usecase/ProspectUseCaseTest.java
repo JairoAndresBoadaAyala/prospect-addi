@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import reactor.core.publisher.Flux;
 
 import java.time.LocalDate;
 
@@ -44,13 +45,13 @@ public class ProspectUseCaseTest {
 
     @Test
     @DisplayName("When call ")//TODO AGREGAR NOMBRE
-    void validateSuccessfulProspect() {
+        void validateSuccessfulProspect() {
         var person = getBuildPerson();
 
-        when(personClient.getPersonByIdentificationNumber(IDENTIFICATION_NUMBER)).thenReturn(person);
-        when(personRepository.getPersonByIdentificationNumber(IDENTIFICATION_NUMBER)).thenReturn(person);
-        when(judicialClient.haveJudicialRecord(IDENTIFICATION_NUMBER)).thenReturn(false);
-        when(prospectRatingClient.getProspectQualification(person, true, false)).thenReturn(90);
+        when(personClient.getPersonByIdentificationNumber(IDENTIFICATION_NUMBER)).thenReturn(Flux.just(person));
+        when(personRepository.getPersonByIdentificationNumber(IDENTIFICATION_NUMBER)).thenReturn(Flux.just(person));
+        when(judicialClient.haveJudicialRecord(IDENTIFICATION_NUMBER)).thenReturn(Flux.just(false));
+        when(prospectRatingClient.getProspectQualification(person, true, false)).thenReturn(Flux.just(90));
 
         var response = prospectUseCase.validatePropect(IDENTIFICATION_NUMBER);
 
