@@ -7,6 +7,6 @@ import reactor.core.publisher.Flux;
 public class PropectRatingRestClientAdapter implements ProspectRatingClient {
     @Override
     public Flux<Integer> getProspectQualification(Person person, Boolean validationPerson, Boolean judicialRecord) {
-        return null;
+        return Flux.just(90);
     }
 }
