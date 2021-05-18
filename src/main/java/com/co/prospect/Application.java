@@ -15,24 +15,23 @@ import java.util.Scanner;
 public class Application {
 
 
+    public static void main(String[] args) {
+        System.out.println("Iniciamos el programa");
 
-    public static void main(String[] args){
-        System.out.println ("Iniciamos el programa");
-
-        System.out.println ("Por favor introduzca la identificacion:");
+        System.out.println("Por favor introduzca la identificacion:");
 
         var entradaEscaner = new Scanner(System.in);
-        var entradaTeclado = entradaEscaner.nextLine ();
+        var entradaTeclado = entradaEscaner.nextLine();
 
 
         PersonClient personClient = new PersonRestClientAdapter();
-         PersonRepository personRepository = new PersonRepositoryImpl();
-         JudicialClient judicialClient = new JudicialRestClientAdapter();
-         ProspectRatingService prospectRatingService =  new ProspectRatingServiceImpl();
+        PersonRepository personRepository = new PersonRepositoryImpl();
+        JudicialClient judicialClient = new JudicialRestClientAdapter();
+        ProspectRatingService prospectRatingService = new ProspectRatingServiceImpl();
 
-           var prospecto = new ProspectUseCase(personClient, personRepository, judicialClient, prospectRatingService);
+        var prospecto = new ProspectUseCase(personClient, personRepository, judicialClient, prospectRatingService);
 
-          var response =  prospecto.validateProspect(entradaTeclado);
+        var response = prospecto.validateProspect(entradaTeclado);
 
         System.out.println("la respuesta de servicio es -----> ");
         System.out.println(response.block());
