@@ -1,13 +1,17 @@
 package com.co.prospect.adapter.rest;
 
+import com.co.prospect.adapter.exception.PersonException;
 import com.co.prospect.application.port.out.JudicialClient;
-import reactor.core.publisher.Flux;
+import com.co.prospect.config.excepcion.ErrorCode;
+import reactor.core.publisher.Mono;
 
+import java.time.Duration;
 import java.util.Map;
+import java.util.Optional;
 
 public class JudicialRestClientAdapter implements JudicialClient {
     @Override
-    public Flux<Boolean> haveJudicialRecord(String identificationNumber) {
+    public Mono<Boolean> haveJudicialRecord(String identificationNumber) {
         var mapJudicalRecord = Map.of("1111111111", true,
                 "2222222222", false,
                 "33333333333", true,
@@ -19,6 +23,6 @@ public class JudicialRestClientAdapter implements JudicialClient {
                 "99999999999", true
         );
 
-        return Flux.just(mapJudicalRecord.get(identificationNumber));
+        return Mono.just(Optional.ofNullable(mapJudicalRecord.get(identificationNumber)).orElseThrow(() -> new PersonException(ErrorCode.JUDICIAL_RECORD_ERROR))).delayElement(Duration.ofSeconds(2));
     }
 }

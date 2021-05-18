@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.co.prospect.adapter.rest.JudicialRestClientAdapterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-05-18T01:20:48" hostname="jairo-HP-ProBook-450-G7" time="4.021">
+  <properties/>
+  <testcase name="haveJudicialRecordOk()" classname="com.co.prospect.adapter.rest.JudicialRestClientAdapterTest" time="4.012"/>
+  <testcase name="haveJudicialRecordError()" classname="com.co.prospect.adapter.rest.JudicialRestClientAdapterTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,8 +1,8 @@
 package com.co.prospect.application.port.out;
 
 import com.co.prospect.domain.Person;
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface PersonClient {
-    Flux<Person> getPersonByIdentificationNumber(String identificationNumber);
+    Mono<Person> getPersonByIdentificationNumber(String identificationNumber);
 }

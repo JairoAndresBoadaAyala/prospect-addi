@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.co.prospect.adapter.jdbc.PersonRepositoryImplTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-05-18T01:20:39" hostname="jairo-HP-ProBook-450-G7" time="5.902">
+  <properties/>
+  <testcase name="getPersonByIdentificationNumberTestError()" classname="com.co.prospect.adapter.jdbc.PersonRepositoryImplTest" time="0.738"/>
+  <testcase name="getPersonByIdentificationNumberTest()" classname="com.co.prospect.adapter.jdbc.PersonRepositoryImplTest" time="5.163"/>
+  <system-out><![CDATA[20:20:40.182 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

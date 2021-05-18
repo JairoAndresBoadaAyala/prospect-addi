@@ -1,7 +1,7 @@
 package com.co.prospect.application.port.out;
 
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface JudicialClient {
-    Flux<Boolean> haveJudicialRecord(String identificationNumber);
+    Mono<Boolean> haveJudicialRecord(String identificationNumber);
 }

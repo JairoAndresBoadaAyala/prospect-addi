@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonRestClientAdapter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">prospect-addi</a> &gt; <a href="index.source.html" class="el_package">com.co.prospect.adapter.rest</a> &gt; <span class="el_source">PersonRestClientAdapter.java</span></div><h1>PersonRestClientAdapter.java</h1><pre class="source lang-java linenums">package com.co.prospect.adapter.rest;
+
+import com.co.prospect.adapter.exception.PersonException;
+import com.co.prospect.application.port.out.PersonClient;
+import com.co.prospect.config.excepcion.ErrorCode;
+import com.co.prospect.config.util.PersonUtil;
+import com.co.prospect.domain.Person;
+import reactor.core.publisher.Mono;
+
+import java.time.Duration;
+import java.util.Map;
+import java.util.Optional;
+
+<span class="fc" id="L14">public class PersonRestClientAdapter implements PersonClient {</span>
+    @Override
+    public Mono&lt;Person&gt; getPersonByIdentificationNumber(String identificationNumber) {
+<span class="fc" id="L17">        var mapPerson = Map.of(&quot;1111111111&quot;, PersonUtil.buildPersonResponse(&quot;1111111111&quot;),</span>
+<span class="fc" id="L18">                &quot;2222222222&quot;, PersonUtil.buildPersonResponse(&quot;2222222222&quot;),</span>
+<span class="fc" id="L19">                &quot;33333333333&quot;, PersonUtil.buildPersonResponse(&quot;33333333333&quot;),</span>
+<span class="fc" id="L20">                &quot;44444444444&quot;, PersonUtil.buildPersonResponse(&quot;44444444444&quot;),</span>
+<span class="fc" id="L21">                &quot;55555555555&quot;, PersonUtil.buildPersonResponse(&quot;55555555555&quot;),</span>
+<span class="fc" id="L22">                &quot;66666666666&quot;, PersonUtil.buildPersonResponse(&quot;66666666666&quot;),</span>
+<span class="fc" id="L23">                &quot;77777777777&quot;, PersonUtil.buildPersonResponse(&quot;77777777777&quot;),</span>
+<span class="fc" id="L24">                &quot;88888888888&quot;, PersonUtil.buildPersonResponse(&quot;88888888888&quot;),</span>
+<span class="fc" id="L25">                &quot;99999999999&quot;, PersonUtil.buildPersonResponse(&quot;99999999999&quot;)</span>
+        );
+<span class="fc" id="L27">        return Mono.just(PersonUtil.responseToDomain(Optional.ofNullable(mapPerson.get(identificationNumber)).orElseThrow(() -&gt; new PersonException(ErrorCode.NOT_FOUND_EXTERNAL)))).delayElement(Duration.ofSeconds(3));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

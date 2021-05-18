@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonUtil.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">prospect-addi</a> &gt; <a href="index.source.html" class="el_package">com.co.prospect.config.util</a> &gt; <span class="el_source">PersonUtil.java</span></div><h1>PersonUtil.java</h1><pre class="source lang-java linenums">package com.co.prospect.config.util;
+
+import com.co.prospect.adapter.jdbc.model.PersonEntity;
+import com.co.prospect.adapter.rest.model.PersonResponse;
+import com.co.prospect.domain.Person;
+import lombok.experimental.UtilityClass;
+
+import java.time.LocalDate;
+
+@UtilityClass
+public class PersonUtil {
+
+    public PersonResponse buildPersonResponse(String identificationNumber) {
+<span class="fc" id="L14">        return PersonResponse.builder()</span>
+<span class="fc" id="L15">                .identificationNumber(identificationNumber)</span>
+<span class="fc" id="L16">                .firstName(&quot;Jairo&quot;)</span>
+<span class="fc" id="L17">                .lastName(&quot;Boada&quot;)</span>
+<span class="fc" id="L18">                .email(&quot;jairo@gmail.com&quot;)</span>
+<span class="fc" id="L19">                .birthDate(LocalDate.of(1991, 7, 31))</span>
+<span class="fc" id="L20">                .gender(&quot;M&quot;)</span>
+<span class="fc" id="L21">                .build();</span>
+    }
+
+    public PersonEntity buildPersonEntity(String identificationNumber) {
+<span class="fc" id="L25">        return PersonEntity.builder()</span>
+<span class="fc" id="L26">                .identificationNumber(identificationNumber)</span>
+<span class="fc" id="L27">                .firstName(&quot;Jairo&quot;)</span>
+<span class="fc" id="L28">                .lastName(&quot;Boada&quot;)</span>
+<span class="fc" id="L29">                .email(&quot;jairo@gmail.com&quot;)</span>
+<span class="fc" id="L30">                .birthDate(LocalDate.of(1991, 7, 31))</span>
+<span class="fc" id="L31">                .gender(&quot;M&quot;)</span>
+<span class="fc" id="L32">                .build();</span>
+    }
+
+    public Person responseToDomain(PersonResponse personResponse){
+<span class="fc" id="L36">        return Person.builder()</span>
+<span class="fc" id="L37">                .identificationNumber(personResponse.getIdentificationNumber())</span>
+<span class="fc" id="L38">                .firstName(personResponse.getFirstName())</span>
+<span class="fc" id="L39">                .lastName(personResponse.getLastName())</span>
+<span class="fc" id="L40">                .birthDate(personResponse.getBirthDate())</span>
+<span class="fc" id="L41">                .email(personResponse.getEmail())</span>
+<span class="fc" id="L42">                .gender(personResponse.getGender())</span>
+<span class="fc" id="L43">                .build();</span>
+
+    }
+
+    public Person entityToDomain(PersonEntity personEntity){
+<span class="fc" id="L48">        return Person.builder()</span>
+<span class="fc" id="L49">                .identificationNumber(personEntity.getIdentificationNumber())</span>
+<span class="fc" id="L50">                .firstName(personEntity.getFirstName())</span>
+<span class="fc" id="L51">                .lastName(personEntity.getLastName())</span>
+<span class="fc" id="L52">                .birthDate(personEntity.getBirthDate())</span>
+<span class="fc" id="L53">                .email(personEntity.getEmail())</span>
+<span class="fc" id="L54">                .gender(personEntity.getGender())</span>
+<span class="fc" id="L55">                .build();</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

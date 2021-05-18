@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.co.prospect.application.usecase.ProspectUseCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-17T03:15:17" hostname="jairo-HP-ProBook-450-G7" time="1.223">
+<testsuite name="com.co.prospect.application.usecase.ProspectUseCaseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-05-18T01:20:52" hostname="jairo-HP-ProBook-450-G7" time="32.5">
   <properties/>
-  <testcase name="validateSuccessfulProspect()" classname="com.co.prospect.application.usecase.ProspectUseCaseTest" time="1.223"/>
-  <system-out><![CDATA[22:15:18.523 [Test worker] DEBUG reactor.util.Loggers - Using Slf4j logging framework
-]]></system-out>
+  <testcase name="validateSuccessfulProspectInvalidPerson()" classname="com.co.prospect.application.usecase.ProspectUseCaseTest" time="16.48"/>
+  <testcase name="validateSuccessfulProspectValidPerson()" classname="com.co.prospect.application.usecase.ProspectUseCaseTest" time="16.018"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
